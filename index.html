@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel='stylesheet' type='text/css' href='' />
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+    </head>
+    <body>
+        <h1 id='title'>Ration rations out items</h1>
+        <p id='body'>It can be used to throttle streams, do animations, or
+        whatnot. It's pretty simple. You give it a fixed length of time
+        and a variable length array, and it figures out how quickly it needs
+        to ration in order to get it done in time.</p>
+        <script src='index.js'></script>
+        <script>
+        ['title', 'body'].forEach(function(id) {
+            var elem = document.getElementById(id);
+            var text = elem.innerHTML.split('');
+            elem.innerHTML = '';
+            ration(text, 1000, function(letter) {
+                elem.innerHTML += letter;
+            });
+        });
+        </script>
+    </body>
+</html>
